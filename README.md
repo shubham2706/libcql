@@ -128,6 +128,14 @@ use_query_callback(cql::cql_client_t& client,
 }
 
 void
+log_callback(const cql::cql_short_t level,
+             const std::string& message)
+{
+    std::cout << "LOG: " << message << std::endl;
+}
+
+
+void
 connect_callback(cql::cql_client_pool_t* pool)
 {
     // Called after a successfull connection, or
